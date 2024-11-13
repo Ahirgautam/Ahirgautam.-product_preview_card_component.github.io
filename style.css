@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Dark_cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very_dark_blue: hsl(212, 21%, 14%);
+    --Dark_grayish_blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --radius:15px;
+  
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(https://fonts.google.com/specimen/Montserrat);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Fraunces";
+    src: url(https://fonts.google.com/specimen/Fraunces);
+    font-weight: 500;
+}
+body{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--Cream);
+    font-family: "Montserrat";
+    font-size: clamp(.5rem , .5rem + .5vw , 3rem);
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+.card{
+    
+    height: 600px;
+    width: min(500px , 90%);
+    min-width: 300px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--White);
+    display:flex;
+    flex-direction: column;
+}
+.image{
+    height: 40%;
+    width: 100%;
+}
+.image picture {
+    height: 100%;
+    width: 100%;
+    
+}
+.image picture img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.card .content{
+    height: 60%;
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content .category{
+    color: var(--Dark_grayish_blue);
+    letter-spacing: .4rem;
+    font-size: .8rem;
+}
+.content .description{
+    color: var(--Dark_grayish_blue);
+    line-height: 160%;
+    font-size: 1.1rem;
+}
+.content .pricing{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.content h1{
+    color: var(--Very_dark_blue);
+}
+.pricing .oldPrice{
+    text-decoration: line-through;
+    color: var(--Dark_grayish_blue);
+}
+.pricing .currentPrice{
+    color: var(--Dark_cyan);
+    font-size: 2rem ;
+}
+.content button{
+    background-color: var(--Dark_cyan);
+    border: none;
+    border-radius: .5rem;
+    padding: .7rem 0;
+    color: var(--White);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    cursor: pointer;
+    font-family: "Fraunces";
+}
+button:hover{
+    background-color:  hsl(158, 43%, 27%);;
+}
+
+@media (min-width:1024px){
+    .card{
+        height: 450px;
+        width: min(700px , 50%);
+        min-width: 300px;
+        flex-direction: row;
+    }
+    .image{
+        height: 100%;
+        width: 50%;
+    }
+    .card .content{
+        height: 100%;
+        width: 50%;
+        
+    }
+}
